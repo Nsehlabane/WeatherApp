@@ -1,14 +1,70 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Capital Weather SA
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+
+   
+      <ion-content class="home" no padding>
+          <ion-list>
+              <ion-item>
+                <ion-label>Capital City</ion-label>
+                <ion-select [(ngModel)]='city' (ionChange)="getWeather($event)">
+                      <ion-option value="Johannesburg"> Johannesburg (Gauteng)</ion-option>
+                      <ion-option value="Nelspruit"> Nelspruit (Mpumalanga)</ion-option>
+                      <ion-option value="Polokwane"> Polokwane (Limpopo)</ion-option>
+                      <ion-option value="Bloemfontien"> Bloemfontien (Free State)</ion-option>
+                      <ion-option value="Cape Town"> Cape Town (Western Cape)</ion-option>
+                      <ion-option value="Pietermaritzburg"> Pietermaritzburg (KwaZulu-Natal)</ion-option>
+                      <ion-option value="Mahikeng"> Mahikeng (North West)</ion-option>
+                      <ion-option value="Kimberly"> Kimberly (Northern Cape)</ion-option>
+                      <ion-option value="Bhisho"> Bhisho (Eastern Cape)</ion-option>
+                  </ion-select>
+                </ion-item>
+            </ion-list>
+         
+           <!-- <ion-item no-lines>
+            <ion-input class="location" type='text'placeholder="Search City" [(ngModel)]='city'></ion-input>
+          </ion-item>
+            <button ion-button icon-only (click)='getWeather()'><ion-icon name='search'></ion-icon></button>
+            -->
+            <ion-item color="primary">
+                
+                <strong> Date: </strong> {{date * 1000| date}}
+            </ion-item>
+            
+            <ion-item color="primary">
+                <strong> Main Weather: </strong> {{main}}
+                
+            </ion-item>
+          
+            <ion-item color="primary">
+                
+                <strong> Description: </strong>{{description}}
+            </ion-item>
+
+            <ion-item color="primary">
+                
+                <strong> Temperature: </strong> {{temperature | number: 0}}&deg;C
+            </ion-item>
+          
+            <ion-item color="primary">
+               
+                <strong> Humidity: </strong> {{humidity}}%
+            </ion-item>
+          
+            <ion-item color="primary">
+                
+                <strong> Wind Speed: </strong>{{windSpeed}}km/h
+            </ion-item>
+          
+            
+          
+            
+        
+      </ion-content>
+      
+
